@@ -7,7 +7,7 @@ import (
 
 // ranking weights
 const (
-	commitsWeight  = 0.4
+	commitsWeight  = 0.5
 	changesWeight  = 0.3
 	filesWeight    = 0.2
 	startTimeDecay = 15 // days
