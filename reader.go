@@ -73,6 +73,7 @@ func ReadCSV(filePath string) (map[string]*Repo, error) {
 			repoMap[row[2]] = repo
 		}
 
+		repo.TotalCommits += 1
 		repo.TotalAdds += adds
 		repo.TotalDel += dels
 		repo.TotalFileChanges += fileChanges

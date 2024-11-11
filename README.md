@@ -81,16 +81,16 @@ $ go run . [input_file_path] [top_rank]
 
 ## Top 10 Most Active Repositories:
 
-1. **repo476** - Score: 12234
+1. **repo476** - Score: 12236
 2. **repo260** - Score: 3831
 3. **repo920** - Score: 2211
-4. **repo795** - Score: 1900
+4. **repo795** - Score: 1902
 5. **repo161** - Score: 1391
-6. **repo1143** - Score: 1306
-7. **repo518** - Score: 1187
+6. **repo1143** - Score: 1307
+7. **repo518** - Score: 1190
 8. **repo1185** - Score: 1013
 9. **repo1243** - Score: 940
-10. **repo250** - Score: 811
+10. **repo250** - Score: 817
 
 
 ## Notes
