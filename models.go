@@ -32,7 +32,9 @@ func (r *Repo) CalculateScore() {
 
 	timeWeight := 1.0
 
-	days := time.Now().UTC().Sub(time.Unix(r.LastActivity, 0)).Hours() / 24
+	currentTime := time.Now().UTC().Truncate(24 * time.Hour)
+
+	days := currentTime.Sub(time.Unix(r.LastActivity, 0)).Hours() / 24
 	if days > startTimeDecay {
 		timeWeight = startTimeDecay / days
 	}

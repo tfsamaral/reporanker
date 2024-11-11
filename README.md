@@ -20,7 +20,7 @@ type Repo struct {
 ```
 
 ### Calculate Score
-The score is calculated based on the total commits, files changes, additions and deletions that have a weight of importance associated:
+The score is calculated based on the total commits, files changes, additions and deletions with their respective weight of importance:
 
 ```Go
 const (
@@ -32,11 +32,11 @@ const (
 ```
 So for each repository the totals are multiplied by their corresponding weight and added to get a total score:
 ```Go
-score := float64(r.TotalAdds+r.TotalDel)*changesWeigh +
-		float64(r.TotalCommits)*commitsWeigh +
-		float64(r.TotalFileChanges)*filesWeigh
+score := float64(r.TotalAdds+r.TotalDel)*changesWeight+
+		float64(r.TotalCommits)*commitsWeight +
+		float64(r.TotalFileChanges)*filesWeight
 ```
-Additionally there is a time score, that starts at 1 and gradually decays for inactive beyond 15 days.  
+Additionally there is a time weight, that starts at 1 and gradually decays for inactivity beyond 15 days.  
 The time score is applied to the initial score:
 
 ```Go
@@ -69,7 +69,7 @@ $ go run . [input_file_path] [top_rank]
   ```
 
 - **`top_rank`**  
-  An optional integer specifying how many top repositories to display. 
+  Optional integer specifying how many top repositories to display.
   The default value is `10`.
   
   **Example**:  
@@ -79,13 +79,17 @@ $ go run . [input_file_path] [top_rank]
 
 ## Top 10 Most Active Repositories:
 
-1. **repo476** - Score: 12226
-2. **repo260** - Score: 3829
-3. **repo920** - Score: 2208
-4. **repo795** - Score: 1895
-5. **repo161** - Score: 1389
-6. **repo1143** - Score: 1304
-7. **repo518** - Score: 1176
+1. **repo476** - Score: 12234
+2. **repo260** - Score: 3831
+3. **repo920** - Score: 2211
+4. **repo795** - Score: 1900
+5. **repo161** - Score: 1391
+6. **repo1143** - Score: 1306
+7. **repo518** - Score: 1187
 8. **repo1185** - Score: 1013
 9. **repo1243** - Score: 940
-10. **repo250** - Score: 803
+10. **repo250** - Score: 811
+
+
+**Note**: the scores can change slightly based on the current time, as it is used in the calculation.  
+The current results where calculated on **2024-11-10**.
