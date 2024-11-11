@@ -45,6 +45,11 @@ func main() {
 	// rank the repositories based on top rank option
 	rankedRepos := Rank(repos, topRank)
 
+	// print to console
+	for i, v := range rankedRepos {
+		log.Println("Rank:", i+1, "Name:", v.Name, "Score:", v.Score)
+	}
+
 	// write the result to new csv file
 	if err := WriteCSV(rankedRepos); err != nil {
 		log.Fatalln("error writing resulting csv:", err)

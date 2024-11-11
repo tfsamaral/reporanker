@@ -37,7 +37,7 @@ score := float64(r.TotalAdds+r.TotalDel)*changesWeight+
 		float64(r.TotalFileChanges)*filesWeight
 ```
 Additionally there is a time weight, that starts at 1 and gradually decays for inactivity beyond 15 days.  
-The time score is applied to the initial score:
+The time weight is applied to the initial score:
 
 ```Go
 timeWeight := 1.0
@@ -93,5 +93,8 @@ $ go run . [input_file_path] [top_rank]
 10. **repo250** - Score: 811
 
 
-**Note**: the scores can change slightly based on the current time, as it is used in the calculation.  
+## Notes
+
+1. The scores can change slightly based on the current time, as it is used in the calculation.
 The current results where calculated on **2024-11-10**.
+2. The **user** field was ignored since it is unreliable.
