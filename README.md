@@ -24,7 +24,7 @@ The score is calculated based on the total commits, files changes, additions and
 
 ```Go
 const (
-	commitsWeight   = 0.4
+	commitsWeight   = 0.5
 	changesWeight   = 0.3
 	filesWeight     = 0.2
 	startTimeDecay  = 15 // days
